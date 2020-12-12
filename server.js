@@ -293,7 +293,7 @@ router.get('/get-products', function(req, res, next) {
 
 
 
-server.listen(process.env.PORT || 3000, process.env.IP || "10.0.2.2", function(){
+server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
   var addr = server.address();
   console.log("Demo server listening at", addr.address + ":" + addr.port);
 });
