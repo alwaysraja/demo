@@ -2,8 +2,10 @@ var config = {
 	"IS_APPLICATION_IN_SANDBOX" : true,
 
 	"sandbox" : {
-		"CLIENT_ID" :"ATc4v2WmxX53dt4Bbp5nQW0_RBPp66dJdNvWp_t5WfrtVlAQo213ln6COCz4YklplPVuDpCnY5dB_a_6",
-		"SECRET":"EPWHFE1T2Efx-tRpdI-Bzwe6nhnuQLc2W5ErOO4vBP_bmjwvhvhf8HuDMsKr-DYRa5PBkRgnxIOCZbH-",
+		//"CLIENT_ID" :"ATc4v2WmxX53dt4Bbp5nQW0_RBPp66dJdNvWp_t5WfrtVlAQo213ln6COCz4YklplPVuDpCnY5dB_a_6",
+		//"SECRET":"EPWHFE1T2Efx-tRpdI-Bzwe6nhnuQLc2W5ErOO4vBP_bmjwvhvhf8HuDMsKr-DYRa5PBkRgnxIOCZbH-",
+		"CLIENT_ID" :"ASmYXVgtZ1xPxWsfZwt6QZ1WlaF5UMg76Vx696uf6kpv19ICkBkginb2D0WzGC2IoAv1LXFP85vp_AMU",
+		"SECRET":"ELD6BbRRGvvrnA30EhOqZf17gKz8OTMRDnBaTAQdGiQ4lPCprCrD32u5u6NMF5zTEdHonr_MynsqNgsN",
 		"ACCESS_TOKEN_URL":"https://api.sandbox.paypal.com/v1/oauth2/token",
 		"CREATE_PAYMENT_URL":"https://api.sandbox.paypal.com/v1/payments/payment",
 		"EXECUTE_PAYMENT_URL":"https://api.sandbox.paypal.com/v1/payments/payment/{payment_id}/execute/",
