@@ -38,7 +38,7 @@ function getAccessToken(cb) {
 	
 	var url = configuration.ACCESS_TOKEN_URL;
 	var token  = configuration.CLIENT_ID+":"+configuration.SECRET,
-	    encodedKey = new Buffer(token).toString('base64'),
+	    encodedKey = new Buffer.from(token).toString('base64'),
 	    payload = "grant_type=client_credentials&Content-Type=application%2Fx-www-form-urlencoded&response_type=token&return_authn_schemes=true",
 	    headers = {
 			'authorization': "Basic "+encodedKey,
