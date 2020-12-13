@@ -38,7 +38,7 @@ function getAccessToken(cb) {
 	
 	var url = configuration.ACCESS_TOKEN_URL;
 	var token  = configuration.CLIENT_ID+":"+configuration.SECRET,
-	    encodedKey = new Buffer.from(token).toString('base64'),
+	    encodedKey = new Buffer(token).toString('base64'),
 	    payload = "grant_type=client_credentials&Content-Type=application%2Fx-www-form-urlencoded&response_type=token&return_authn_schemes=true",
 	    headers = {
 			'authorization': "Basic "+encodedKey,
@@ -146,7 +146,35 @@ router.post('/create-payments', function(req, res, next) {
 
 	try{
 		
-	 	var payLoad = buildCreatePaymentPayload(req.body);
+	 	var payLoad = {
+			"intent": "sale",
+			
+			"payer": {
+				"payment_method": "paypal"
+			  },
+			"transactions": [
+			  {
+				"amount": {
+				  "total": "160.50",
+				  "currency": "USD",
+				  "details": {
+					"subtotal": "111.50",
+					"shipping": "49.00"
+				  }
+				},
+				"description": "",
+				"custom": "your custom variable",
+		  
+				
+		  
+			  }
+			],
+			"redirect_urls": {
+			  "return_url": "com.example.paypalcustomtabdemo://success",
+			  "cancel_url": "https://node-paypal-express-sever.herokuapp.com/cancel-url"
+			}
+		  };
+			 //buildCreatePaymentPayload(req.body);
 	 	getAccessToken(function(data) {
 
 			var accessToken = JSON.parse(data).access_token;
@@ -169,7 +197,7 @@ router.post('/create-payments', function(req, res, next) {
 				json:true
 				
 			}
-			
+			console.log(JSON.stringify(options))
 			request(options, function (error, response, body) {
 			  if (error) {
 			  	throw new Error(error);
@@ -293,7 +321,7 @@ router.get('/get-products', function(req, res, next) {
 
 
 
-server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
+server.listen(process.env.PORT || 3000, process.env.IP || "127.0.0.1", function(){
   var addr = server.address();
   console.log("Demo server listening at", addr.address + ":" + addr.port);
 });
