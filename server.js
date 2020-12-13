@@ -95,8 +95,6 @@ function buildCreatePaymentPayload(data) {
 		template.transactions[0].item_list.items[0].tax = data.tax	
 		template.transactions[0].item_list.items[0].currency = data.currency	
 
-
-
 		template.redirect_urls.return_url = configuration.RETURN_URL
 		template.redirect_urls.cancel_url = configuration.CANCEL_URL
 
@@ -117,8 +115,6 @@ function buildCreatePaymentPayload(data) {
 		}else {
 			delete template.transactions[0].item_list['shipping_address'];
 		}
-
-
 	return template;
 
 }
@@ -139,14 +135,9 @@ router.get('/get-access-token', function(req,res,next){
 		res.send(accessToken);
 	})
 })
-
-
-
 router.post('/create-payments', function(req, res, next) {
-
 	try{
-		
-	 	var payLoad = {
+		var payLoad = {
 			"intent": "sale",
 			
 			"payer": {
@@ -164,14 +155,11 @@ router.post('/create-payments', function(req, res, next) {
 				},
 				"description": "",
 				"custom": "your custom variable",
-		  
-				
-		  
 			  }
 			],
 			"redirect_urls": {
 			  "return_url": "com.example.paypalcustomtabdemo://success",
-			  "cancel_url": "https://node-paypal-express-sever.herokuapp.com/cancel-url"
+			  "cancel_url": "https://node-paypal-express-sever1.herokuapp.com/cancel-url"
 			}
 		  };
 			 //buildCreatePaymentPayload(req.body);
