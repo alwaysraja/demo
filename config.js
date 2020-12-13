@@ -8,7 +8,7 @@ var config = {
 		"CREATE_PAYMENT_URL":"https://api.sandbox.paypal.com/v1/payments/payment",
 		"EXECUTE_PAYMENT_URL":"https://api.sandbox.paypal.com/v1/payments/payment/{payment_id}/execute/",
 		"GET_PAYMENT_DETAILS":"https://api.sandbox.paypal.com/v1/payments/payment/{payment_id}",
-		"CANCEL_URL":"https://node-paypal-express-sever.herokuapp.com/cancel-url",
+		"CANCEL_URL":"https://node-paypal-express-sever1.herokuapp.com/cancel-url",
 		"RETURN_URL":"com.example.paypalcustomtabdemo://success",
 		"BN_CODE":"PP-DemoPortal-EC-JSV4-python-REST"
 	},
